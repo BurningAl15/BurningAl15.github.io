@@ -1,0 +1,13 @@
+{
+"companyName": "DefaultCompany",
+"productName": "SpacialHamster",
+"dataUrl": "web demo.data.unityweb",
+"asmCodeUrl": "web demo.asm.code.unityweb",
+"asmMemoryUrl": "web demo.asm.memory.unityweb",
+"asmFrameworkUrl": "web demo.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
