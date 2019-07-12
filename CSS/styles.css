@@ -126,6 +126,10 @@
     text-align: center;
 }
 
+.littleSize {
+    font-size: 20px;
+}
+
 .midSize {
     font-size: 25px;
 }
