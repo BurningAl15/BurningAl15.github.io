@@ -1,0 +1,25 @@
+.GameCardBuild {
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+  justify-self: center;
+
+  margin: auto;
+
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+
+  align-items: center;
+  overflow: hidden;
+  list-style: none;
+
+  border-radius: 5px;
+}
+
+.socialNetwork {
+  width: 50px;
+  height: 50px;
+}
+
+
+/* @media screen and (max-width:) */
