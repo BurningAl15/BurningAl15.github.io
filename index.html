@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Aldhair Vera</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="cv-container">
+        <div class="cv-header">
+            <div class="cv-header-container">
+            </div>
+            <div class="cv-header-social">
+            </div>
+        </div>
+        <div class="cv-content">
+            <div class="cv-content-description">
+                <div class="cv-content-description-header">
+                    <h3>Description</h3>
+                </div>
+                <div class="cv-content-description-body">
+                </div>
+            </div>
+            <div class="cv-content-container">
+                <div class="cv-content-skills">
+                    <div class="cv-content-skills-header">
+                        <h3>Skills</h3>
+                    </div>
+                    <div class="cv-content-skills-body">
+                    </div>
+                </div>
+                <div class="cv-content-languages">
+                    <div class="cv-content-languages-header">
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="cv-content-languages-body">
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+<script>
+    let cv = {
+        name: "Aldhair Vera",
+        titles: ["Full Stack Web Developer", "Game Developer"],
+        bio: `I like geek stuff like superheroe series and comics, manga, manwha, series, books.
+I also do programming in my job and in my free time (learning other languages, frameworks or engines) for fun.
+I like to taste new food too, or experiment with food by myself (almost every experiment I did tasted good).
+I've been working on videogames for 4 years doing mobile, WebGL, VR, PC games with Unity, C++ and OpenGL, Gamemaker.
+`,
+        social: [
+            {
+                name: '@BurningAl15',
+                url: 'https://github.com/BurningAl15',
+                icon_url: 'https://img.icons8.com/ios-glyphs/30/000000/github.png'
+            },
+            {
+                name: 'Aldhair Vera',
+                url: 'https://www.linkedin.com/in/aldhairvera/',
+                icon_url: 'https://img.icons8.com/material-sharp/24/000000/linkedin--v1.png'
+            }
+        ],
+        skills: {
+            Programming: 3,
+            Javascript: 2,
+            CSS: 3,
+            HTML: 3,
+            Git: 2
+        },
+        languages: [
+            {
+                name: 'English',
+                level: 'B2'
+            },
+            {
+                name: 'Spanish',
+                level: 'Native'
+            },
+        ],
+    }
+
+    // HEADER MAIN INFO
+    let headerContainer = document.getElementsByClassName('cv-header-container')[0];
+
+    //Add an image
+    let img = document.createElement('img');
+    img.src = 'https://i.ibb.co/3Ws7Zdj/Ready-Player-Me-Avatar.png';
+    img.alt = 'Profile Image';
+
+    headerContainer.appendChild(img);
+
+    //h1 - Name
+    const headerName = document.createElement('h1');
+    headerName.innerHTML = `${cv.name}`;
+    headerContainer.appendChild(headerName);
+
+    //ul - Titles
+    const headerTitles = document.createElement('ul');
+    cv.titles.forEach(title => {
+        const headerTitle = document.createElement('li');
+        headerTitle.className = "cv-header-title";
+        headerTitle.innerHTML = `${title}`;
+        headerTitles.appendChild(headerTitle);
+    });
+    headerContainer.appendChild(headerTitles);
+
+    // HEADER Social Info
+    let headerSocial = document.getElementsByClassName('cv-header-social')[0];
+
+    //ul - Social
+    const headerSocialList = document.createElement('ul');
+    cv.social.forEach(social => {
+        const headerSocialItem = document.createElement('li');
+        const headerSocialLink = document.createElement('a');
+        headerSocialLink.href = social.url;
+        headerSocialLink.className = 'social-link';
+        headerSocialLink.innerHTML = `<img class="icon" src=${social.icon_url} alt="Icon"/> ${social.name}`;
+        headerSocialItem.appendChild(headerSocialLink);
+        headerSocialList.appendChild(headerSocialItem);
+    });
+    headerSocial.appendChild(headerSocialList);
+
+    //CONTENT Skills
+    let contentSkills = document.getElementsByClassName('cv-content-skills-body')[0];
+    const contentList = document.createElement('ul');
+
+    const skillKeys = Object.keys(cv.skills);
+
+    skillKeys.forEach((key, index) => {
+        const headerSocialItem = document.createElement('li');
+        headerSocialItem.textContent = `${key}: ${'⭐️'.repeat(cv.skills[key])}`;
+        contentList.appendChild(headerSocialItem);
+    });
+    contentSkills.appendChild(contentList);
+
+    //CONTENT Description
+    let contentDescription = document.getElementsByClassName('cv-content-description-body')[0];
+    contentDescription.innerHTML = `${cv.bio}`;
+
+    //CONTENT Languages
+    let contentLanguages = document.getElementsByClassName('cv-content-languages-body')[0];
+    const contentLanguagesList = document.createElement('ul');
+
+    cv.languages.forEach(social => {
+        const headerLanguageItem = document.createElement('li');
+        headerLanguageItem.textContent = `${social.name}: ${social.level}`;
+        contentLanguagesList.appendChild(headerLanguageItem);
+    });
+    contentLanguages.appendChild(contentLanguagesList);
+
+</script>
+
+</html>
